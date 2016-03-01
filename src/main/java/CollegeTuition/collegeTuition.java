@@ -15,6 +15,7 @@ import static java.lang.Math.*;
 
 public class collegeTuition {
 	
+	//initialize variables
 	static double initialTuition,
 	percentInc, 
 	APR, 
