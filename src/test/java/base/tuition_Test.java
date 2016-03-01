@@ -8,6 +8,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import CollegeTuition.*;
+
+
+
 public class tuition_Test {
 
 	@BeforeClass
@@ -30,18 +34,20 @@ public class tuition_Test {
 	public void test() {
 		assertTrue(1==1);
 		
-		MyInteger A = new MyInteger(8);
-		MyInteger B = new MyInteger(2);
-		MyInteger C = new MyInteger(9);
 		
-		boolean result = A.isEven();
-		assertEquals(true,result);
+		assertEquals(collegeTuition.total(12500, .1));
+		assertEquals(collegeTuition.total(12500, .1));
+		assertEquals(collegeTuition.total(12500, .1));
 		
-		result = B.isOdd();
-		assertEquals(false,result);
+		assertEquals(collegeTuition.paymentCalculations(58012.5, .1, 120));
+		assertEquals(collegeTuition.paymentCalculations(58012.5, .1, 120));
+		assertEquals(collegeTuition.paymentCalculations(58012.5, .1, 120));
+
 		
-		result = C.isPrime();
-		assertEquals(false,result);
+	}
+
+	private void assertEquals(double total) {
+		// TODO Auto-generated method stub
 		
 	}
 

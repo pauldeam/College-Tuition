@@ -1,4 +1,13 @@
 package CollegeTuition;
+/**
+ * Creating a program that finds the total amount of tuition money due, as
+ * well as finds the payments needed per month, after graduation, in order
+ * to pay off the debt.
+ * @param initialTuition, percentInc, APR, yearsPaying, months, monthlyPayments, 
+ * futureValue, totalTuition, remaining
+ * @return totalTuition, monthlyPayments
+ * @author Paul Jureidini
+ */
 
 import java.util.Scanner;
 
@@ -6,15 +15,17 @@ import static java.lang.Math.*;
 
 public class collegeTuition {
 	
-	double initialTuition, 
+	static double initialTuition,
 	percentInc, 
 	APR, 
 	yearsPaying,
 	months,
-	monthlyPayments, 
 	futureValue,
-	totalTuition,
-	remaining;
+	remaining,
+	increments,
+	monthlyPayments,
+	totalTuition;
+
 	
 	Scanner scan = new Scanner(System.in);
 	
@@ -38,28 +49,33 @@ public class collegeTuition {
 		months = yearsPaying*12; //months in a year
 	}
 	
-	public void total()
+	public static double total(double initialTuition, double percentInc)
 	{
 		//calculating the total tuition that needs to be payed
-		double increments = initialTuition;
+		increments = initialTuition;
 		totalTuition = 0;
 		for (int i=1; i<=4; i++)
 		{
-//			System.out.println(increments);
+
 			totalTuition = totalTuition + increments;
 			increments = increments + increments * percentInc;
 			
 		}
 		System.out.printf("The total tuition bill is $%.2f", totalTuition);
 		System.out.println();
+
+		return totalTuition;
 	}
 	
-	public void paymentCalculations()
+	public static double paymentCalculations(double totalTuition, double APR, double months )
 	{
-		//calculating the payment plan
+		//calculating the payment plan using amortization equation
 		monthlyPayments = totalTuition*((APR * pow(1+APR, months))/(pow((1+APR),months)-1));
 		
 		System.out.printf("The monthly payments due each montth are $%.2f", monthlyPayments);
+		System.out.println();
+		
+		return monthlyPayments;
 	}
 
 
@@ -68,8 +84,8 @@ public class collegeTuition {
 
 		collegeTuition yo = new collegeTuition();
 		yo.variables();
-		yo.total();
-		yo.paymentCalculations();
+		yo.total(initialTuition, percentInc);
+		yo.paymentCalculations(totalTuition, APR, months);
 	}
 
 }
