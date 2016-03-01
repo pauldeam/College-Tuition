@@ -36,12 +36,14 @@ public class tuition_Test {
 		
 		
 		assertEquals(collegeTuition.total(12500, .1));
-		assertEquals(collegeTuition.total(12500, .1));
-		assertEquals(collegeTuition.total(12500, .1));
+		assertEquals(collegeTuition.total(33000, .05));
+		assertEquals(collegeTuition.total(18500, .15));
+		assertEquals(collegeTuition.total(20000, .03));
 		
 		assertEquals(collegeTuition.paymentCalculations(58012.5, .1, 120));
-		assertEquals(collegeTuition.paymentCalculations(58012.5, .1, 120));
-		assertEquals(collegeTuition.paymentCalculations(58012.5, .1, 120));
+		assertEquals(collegeTuition.paymentCalculations(142234.13, .05, 240));
+		assertEquals(collegeTuition.paymentCalculations(92377.44, .1, 120));
+		assertEquals(collegeTuition.paymentCalculations(83672.54, .1, 360));
 
 		
 	}

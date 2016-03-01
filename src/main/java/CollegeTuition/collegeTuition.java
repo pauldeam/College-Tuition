@@ -49,6 +49,7 @@ public class collegeTuition {
 		months = yearsPaying*12; //months in a year
 	}
 	
+	//this method calculates the total amount of payments due
 	public static double total(double initialTuition, double percentInc)
 	{
 		//calculating the total tuition that needs to be payed
@@ -67,6 +68,7 @@ public class collegeTuition {
 		return totalTuition;
 	}
 	
+	//This method calculates the monthly payments
 	public static double paymentCalculations(double totalTuition, double APR, double months )
 	{
 		//calculating the payment plan using amortization equation
